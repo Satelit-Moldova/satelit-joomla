@@ -24,7 +24,7 @@ Real output of `{satelit rates EUR,USD}` on Joomla 3.10 (19 Nov 2026, live API):
 | Extension | What it does |
 |---|---|
 | `mod_satelit` (site module) | One block per module, chosen in its settings: BNM rates, fuel prices, latest news, cinema today, joke of the day, new laws. |
-| `plg_content_satelit` (content plugin) | Inline tags in articles; holds the **API key** (one key for the site). Switched on by the installer. |
+| `plg_content_satelit` (content plugin) | Inline tags in articles. Holds the **API key** (one key for the site). Switched on by the installer. |
 | `lib_satelit` (library) | The shared code: API client on Joomla's HTTP client, Joomla's cache, escaping, the HTML, en-GB / ro-RO / ru-RU labels, a small stylesheet. |
 
 ## Requirements
@@ -43,7 +43,7 @@ Installing a newer zip over the old one updates it and keeps the key.
 
 **Extensions → Plugins → Content - Satelit**:
 
-- **API key**: paste it and save. The field is always shown empty (the key never goes back to the browser); an empty field keeps the saved key, `-` removes it. After saving, the page says what the API answered, e.g. *Key works: plan pro, 297 173 credits left this period.*, or *The API did not accept the key or could not be reached (key_invalid)*.
+- **API key**: paste it and save. The field is always shown empty (the key never goes back to the browser). An empty field keeps the saved key, `-` removes it. After saving, the page says what the API answered, e.g. *Key works: plan pro, 297 173 credits left this period.*, or *The API did not accept the key or could not be reached (key_invalid)*.
 - **Data language**: site language (ro-RO → Romanian, ru-RU → Russian, others English) or a fixed one.
 - Advanced: **API address**, empty for `https://api.satelit.md/v1` (only for tests).
 
@@ -78,7 +78,7 @@ Answers are kept in Joomla's cache (group `satelit`, on even when the site's cac
 | Cinema today | 3 h (each call costs 40 credits) |
 | Joke, laws | 6 h |
 
-A busy site spends at most one call per block per period, whatever its traffic. A copy is kept 7 days: when the API cannot be reached or refuses the key, the last copy is shown and calls pause for 5 minutes (or the API's `Retry-After`), so a dead API never slows pages. With no key and no copy the module disappears and the tag is removed; the page stays up. One short line per failure goes to `administrator/logs/satelit.php`. **System → Clear Cache → satelit** forces fresh answers.
+A busy site spends at most one call per block per period, whatever its traffic. A copy is kept 7 days: when the API cannot be reached or refuses the key, the last copy is shown and calls pause for 5 minutes (or the API's `Retry-After`), so a dead API never slows pages. With no key and no copy the module disappears and the tag is removed. The page stays up. One short line per failure goes to `administrator/logs/satelit.php`. **System → Clear Cache → satelit** forces fresh answers.
 
 ## Tested with
 
@@ -89,7 +89,7 @@ Verified on 19 Nov 2026 against the live API, with official Docker images: packa
 | 3.10.11 (`joomla:3.10-php7.4-apache`) | 7.4.33 | MariaDB 10.11.19 | install, upgrade, key form, 6 modules + tags, dead API, bad key |
 | 5.4.10 (`joomla:5-apache`) | 8.3.36 | MariaDB 10.11.19 | the same, plus ro-RO labels with the official Romanian pack |
 
-Offline tests (PHPUnit 9.6) pass on PHP 7.4.33, 8.0.30 and 8.3.36. Joomla 4.x was not run; it uses the same classes as 5.x.
+Offline tests (PHPUnit 9.6) pass on PHP 7.4.33, 8.0.30 and 8.3.36. Joomla 4.x was not run. It uses the same classes as 5.x.
 
 ## Troubleshooting
 
@@ -113,7 +113,7 @@ php build/build.php                              # dist/pkg_satelit-1.0.0.zip
 
 ## Pe scurt (română)
 
-Pachet Joomla (3.10, 4, 5) cu datele Moldovei din API-ul Satelit: cursul BNM, prețul carburanților, ultimele știri, cinema azi, bancul zilei, noutăți legislative. Instalați `pkg_satelit-1.0.0.zip` din Sistem → Instalare → Extensii, salvați cheia API în Extensii → Pluginuri → Conținut - Satelit, apoi adăugați un modul Satelit sau scrieți `{satelit rates EUR,USD}` într-un articol. Răspunsurile se păstrează în cache (știri 15 min, curs 3 h, cinema 3 h); dacă API-ul nu răspunde, se arată ultima copie salvată, iar site-ul merge mai departe. Interfața are română, rusă și engleză.
+Pachet Joomla (3.10, 4, 5) cu datele Moldovei din API-ul Satelit: cursul BNM, prețul carburanților, ultimele știri, cinema azi, bancul zilei, noutăți legislative. Instalați `pkg_satelit-1.0.0.zip` din Sistem → Instalare → Extensii, salvați cheia API în Extensii → Pluginuri → Conținut - Satelit, apoi adăugați un modul Satelit sau scrieți `{satelit rates EUR,USD}` într-un articol. Răspunsurile se păstrează în cache (știri 15 min, curs 3 h, cinema 3 h). Dacă API-ul nu răspunde, se arată ultima copie salvată, iar site-ul merge mai departe. Interfața are română, rusă și engleză.
 
 ## License
 
