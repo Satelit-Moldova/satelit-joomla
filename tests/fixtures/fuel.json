@@ -1,0 +1,149 @@
+{
+ "data": {
+  "date": "2026-11-19",
+  "cap": {
+   "a95": 28.08,
+   "diesel": 33.46
+  },
+  "networks": [
+   {
+    "key": "lukoil",
+    "name": "Lukoil",
+    "url": "https://lukoil.md/ro/",
+    "stations": 103,
+    "date": "2026-11-19",
+    "stale": false,
+    "prices": {
+     "a95": 28.08,
+     "diesel": 33.46,
+     "lpg": 18.95
+    }
+   },
+   {
+    "key": "rompetrol",
+    "name": "Rompetrol",
+    "url": "https://www.rompetrol.md/",
+    "stations": 95,
+    "date": "2026-11-19",
+    "stale": false,
+    "prices": {
+     "a95": 28.05,
+     "diesel": 33.42,
+     "lpg": 19.0
+    }
+   },
+   {
+    "key": "vento",
+    "name": "Vento",
+    "url": "https://vento-moldova.md/",
+    "stations": 89,
+    "date": "2026-11-19",
+    "stale": false,
+    "prices": {
+     "a95": 28.04,
+     "diesel": 33.44,
+     "lpg": 19.19
+    }
+   },
+   {
+    "key": "petrom",
+    "name": "Petrom",
+    "url": "https://www.petrom.md/ro/carburanti/localizator",
+    "stations": 65,
+    "date": "2026-11-19",
+    "stale": false,
+    "prices": {
+     "a95": 28.08,
+     "diesel": 33.46,
+     "lpg": null
+    }
+   },
+   {
+    "key": "bemol",
+    "name": "Bemol",
+    "url": "https://bemol.md/ro/prices",
+    "stations": 41,
+    "date": "2026-11-19",
+    "stale": false,
+    "prices": {
+     "a95": 28.08,
+     "diesel": 33.46,
+     "lpg": 18.95
+    }
+   },
+   {
+    "key": "now-oil",
+    "name": "Now Oil",
+    "url": null,
+    "stations": 24,
+    "date": "2026-11-19",
+    "stale": false,
+    "prices": {
+     "a95": 28.08,
+     "diesel": 33.46,
+     "lpg": 19.0
+    }
+   },
+   {
+    "key": "e-gaz",
+    "name": "E-Gaz",
+    "url": "https://e-gaz.md/",
+    "stations": 22,
+    "date": "2026-11-19",
+    "stale": false,
+    "prices": {
+     "a95": 28.03,
+     "diesel": 33.41,
+     "lpg": 18.99
+    }
+   },
+   {
+    "key": "fox-petrol",
+    "name": "Fox Petrol",
+    "url": "https://foxpetrol.md/",
+    "stations": 11,
+    "date": "2026-11-19",
+    "stale": false,
+    "prices": {
+     "a95": 28.03,
+     "diesel": 33.43,
+     "lpg": 18.92
+    }
+   }
+  ],
+  "cheapest": {
+   "a95": "tlx",
+   "diesel": "tlx",
+   "lpg": "tlx"
+  },
+  "range": {
+   "a95": {
+    "min": 27.9,
+    "max": 28.8,
+    "networks": 20
+   },
+   "diesel": {
+    "min": 33.25,
+    "max": 34.14,
+    "networks": 20
+   },
+   "lpg": {
+    "min": 18.6,
+    "max": 19.2,
+    "networks": 17
+   }
+  }
+ },
+ "meta": {
+  "credits": 1,
+  "updated_at": "2026-11-19T16:51:52+02:00",
+  "sources": [
+   {
+    "name": "ANRE",
+    "url": "https://anre.md",
+    "license": "Public data of ANRE"
+   }
+  ],
+  "attribution": null
+ }
+}

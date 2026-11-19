@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="content" version="3.10" method="upgrade">
+	<name>plg_content_satelit</name>
+	<author>Satelit</author>
+	<authorEmail>contact@satelit.md</authorEmail>
+	<authorUrl>https://satelit.md</authorUrl>
+	<copyright>(c) 2026 Satelit (satelit.md)</copyright>
+	<license>MIT</license>
+	<creationDate>2026-11-19</creationDate>
+	<version>1.0.0</version>
+	<description>PLG_CONTENT_SATELIT_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="satelit">satelit.php</filename>
+		<folder>fields</folder>
+		<folder>language</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/plugins/content/satelit/fields">
+				<field name="api_key" type="satelitkey"
+					label="PLG_CONTENT_SATELIT_KEY_LABEL"
+					description="PLG_CONTENT_SATELIT_KEY_DESC"
+					filter="raw" />
+				<field name="lang" type="list" default=""
+					label="PLG_CONTENT_SATELIT_LANG_LABEL"
+					description="PLG_CONTENT_SATELIT_LANG_DESC">
+					<option value="">PLG_CONTENT_SATELIT_LANG_AUTO</option>
+					<option value="ro">Română</option>
+					<option value="ru">Русский</option>
+					<option value="en">English</option>
+					<option value="uk">Українська</option>
+				</field>
+				<field name="usage" type="note"
+					label="PLG_CONTENT_SATELIT_USAGE_LABEL"
+					description="PLG_CONTENT_SATELIT_USAGE_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="api_base" type="url" default="" filter="url"
+					label="PLG_CONTENT_SATELIT_BASE_LABEL"
+					description="PLG_CONTENT_SATELIT_BASE_DESC"
+					hint="https://api.satelit.md/v1" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

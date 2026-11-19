@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" version="3.10" method="upgrade">
+	<name>mod_satelit</name>
+	<author>Satelit</author>
+	<authorEmail>contact@satelit.md</authorEmail>
+	<authorUrl>https://satelit.md</authorUrl>
+	<copyright>(c) 2026 Satelit (satelit.md)</copyright>
+	<license>MIT</license>
+	<creationDate>2026-11-19</creationDate>
+	<version>1.0.0</version>
+	<description>MOD_SATELIT_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_satelit">mod_satelit.php</filename>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="show" type="list" default="rates"
+					label="MOD_SATELIT_SHOW_LABEL" description="MOD_SATELIT_SHOW_DESC">
+					<option value="rates">MOD_SATELIT_SHOW_RATES</option>
+					<option value="fuel">MOD_SATELIT_SHOW_FUEL</option>
+					<option value="news">MOD_SATELIT_SHOW_NEWS</option>
+					<option value="cinema">MOD_SATELIT_SHOW_CINEMA</option>
+					<option value="joke">MOD_SATELIT_SHOW_JOKE</option>
+					<option value="law">MOD_SATELIT_SHOW_LAW</option>
+				</field>
+				<field name="codes" type="text" default="EUR,USD,RON" filter="string"
+					label="MOD_SATELIT_CODES_LABEL" description="MOD_SATELIT_CODES_DESC"
+					showon="show:rates" />
+				<field name="networks" type="number" default="5" min="0" max="20" filter="integer"
+					label="MOD_SATELIT_NETWORKS_LABEL" description="MOD_SATELIT_NETWORKS_DESC"
+					showon="show:fuel" />
+				<field name="count" type="number" default="5" min="1" max="20" filter="integer"
+					label="MOD_SATELIT_COUNT_LABEL" description="MOD_SATELIT_COUNT_DESC"
+					showon="show:news,law" />
+				<field name="category" type="list" default=""
+					label="MOD_SATELIT_CATEGORY_LABEL" description="MOD_SATELIT_CATEGORY_DESC"
+					showon="show:news">
+					<option value="">JALL</option>
+					<option value="politics">MOD_SATELIT_CAT_POLITICS</option>
+					<option value="economy">MOD_SATELIT_CAT_ECONOMY</option>
+					<option value="society">MOD_SATELIT_CAT_SOCIETY</option>
+					<option value="justice">MOD_SATELIT_CAT_JUSTICE</option>
+					<option value="health">MOD_SATELIT_CAT_HEALTH</option>
+					<option value="education">MOD_SATELIT_CAT_EDUCATION</option>
+					<option value="infrastructure">MOD_SATELIT_CAT_INFRASTRUCTURE</option>
+					<option value="incidents">MOD_SATELIT_CAT_INCIDENTS</option>
+					<option value="tech_ai">MOD_SATELIT_CAT_TECH_AI</option>
+					<option value="world">MOD_SATELIT_CAT_WORLD</option>
+				</field>
+				<field name="city" type="text" default="Chișinău" filter="string"
+					label="MOD_SATELIT_CITY_LABEL" description="MOD_SATELIT_CITY_DESC"
+					showon="show:cinema" />
+				<field name="posters" type="radio" default="1" class="btn-group btn-group-yesno"
+					label="MOD_SATELIT_POSTERS_LABEL" showon="show:cinema">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="textarea" rows="2"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

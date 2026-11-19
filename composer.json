@@ -1,0 +1,20 @@
+{
+    "name": "satelit-moldova/satelit-joomla",
+    "description": "Satelit for Joomla: BNM rates, fuel prices, news, cinema today, joke of the day and new laws from the Satelit API (Moldova).",
+    "type": "joomla-package",
+    "license": "MIT",
+    "homepage": "https://developer.satelit.md/en/docs/",
+    "require": {
+        "php": ">=7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5 || ^9.6"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "build": "php build/build.php"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
